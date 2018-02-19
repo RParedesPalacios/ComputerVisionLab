@@ -15,7 +15,7 @@ Images from "Life Faces in the Wild" dataset (LFW) in realistic scenarios, poses
 
 **Python code**: [here](gender.py)
 
---
+---
 
 ## 2 TBD
 
