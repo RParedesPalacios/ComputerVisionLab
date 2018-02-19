@@ -8,6 +8,7 @@ Gender classification. Images are 100x100 pixels RGB.
 
 
 **Python Notebook**: [here](gender.ipynb)
+
 **Python code**: [here](gender.py)
 
 
