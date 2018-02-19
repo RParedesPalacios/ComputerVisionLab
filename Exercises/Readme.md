@@ -1,6 +1,8 @@
 ## Gender Recognition
 
-Gender classification. Images are 100x100 pixels RGB. 
+Images from "Life Faces in the Wild" dataset (LFW) in realistic scenarios, poses and gestures. Faces are automatically detected and cropped to 100x100 pixels RGB.
+
+
 
 **Training** set: 10586 images
 
