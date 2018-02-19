@@ -5,6 +5,8 @@ Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](h
 
 ![Cifar10](cifar10.png)
 
+---
+
 ## 1 Gender Recognition
 
 Images from "Life Faces in the Wild" dataset (LFW) in realistic scenarios, poses and gestures. Faces are automatically detected and cropped to 100x100 pixels RGB.
