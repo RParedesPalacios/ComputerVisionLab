@@ -6,7 +6,7 @@ Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](h
 ![Cifar10](cifar10.png)
 
 **Goals:**
-* Implement some basic convoutional networks
+* Implement some basic convolutional networks
 * Implement different data augmentation
 * Implement VGG model A
 
