@@ -24,6 +24,9 @@ Images from "Life Faces in the Wild" dataset (LFW) in realistic scenarios, poses
 
 **Python code**: [here](gender.py)
 
+**Goals:**
+* Get a model with >95% accuracy over test set
+* Get a model with >90% accuracy with less than 100K parameters
 ---
 
 ## 2 Advanced topologies 
