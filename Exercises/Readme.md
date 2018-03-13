@@ -22,7 +22,7 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
 
 **Training** set: 10586 images
 
-**Test set**: 2647 images 
+**Test** set: 2647 images 
 
 
 **Python Notebook**: [here](gender.ipynb)
@@ -53,13 +53,13 @@ Images of 20 different models of cars.
 
 **Training** set: 791 images
 
-**Test set**: 784 images 
+**Test** set: 784 images 
 
 * Version 1. Two different CNNs:
-**Python code**: [here](car1.py)
+  **Python code**: [here](car1.py)
 
 * Version 2. The same CNN (potentially a pre-trained model)
-**Python code**: [here](car2.py)
+  **Python code**: [here](car2.py)
 
 **Goals:**
 * Understand the above Keras implementations:
