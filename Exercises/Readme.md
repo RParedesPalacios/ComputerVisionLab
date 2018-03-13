@@ -56,9 +56,11 @@ Images of 20 different models of cars.
 **Test** set: 784 images 
 
 * Version 1. Two different CNNs:
+
   **Python code**: [here](car1.py)
 
 * Version 2. The same CNN (potentially a pre-trained model)
+
   **Python code**: [here](car2.py)
 
 **Goals:**
