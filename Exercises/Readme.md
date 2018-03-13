@@ -53,10 +53,14 @@ Images of 20 different models of cars.
 
 **Test set**: 784 images 
 
-**Python code**: [here](XXXX)
+* Version 1. Two different CNNs:
+**Python code**: [here](car1.py)
+
+* Version 2. The same CNN (potentially a pre-trained model)
+**Python code**: [here](car2.py)
 
 **Goals:**
-* Understand the following Keras implementations:
+* Understand the above Keras implementations:
   * Name the layers
   * Built several models
   * Understand tensors sizes
@@ -65,12 +69,11 @@ Images of 20 different models of cars.
   * Create a data flow with multiple inputs for the model
   * Understand the limitations of the proposed solution
 
-* Lab Project (2 points of labs mark)
+* **Lab Project (2 points of labs mark)**
   * Load a pre-trained VGG16 
   * Connect this pre-trained model and form a bi-linear
   * Train freezing weights or not
   * ...
-
   
 [Paper](https://pdfs.semanticscholar.org/3a30/7b7e2e742dd71b6d1ca7fde7454f9ebd2811.pdf)
 
