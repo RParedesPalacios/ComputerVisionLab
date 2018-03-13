@@ -43,6 +43,8 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
 * Wide Resnet 
 * Dense Nets
 
+---
+
 ## 3 Car Model identification with bi-linear models
 
 Images of 20 different models of cars.
