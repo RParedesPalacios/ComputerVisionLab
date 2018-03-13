@@ -69,7 +69,7 @@ Images of 20 different models of cars.
 * Lab Project (2 points of labs mark)
   * Load a pre-trained VGG16 
   * Connect this pre-trained model and form a bi-linear
-  * Try with freeze weights or not
+  * Train freezing weights or not
   * ...
 
   
