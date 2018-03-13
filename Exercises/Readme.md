@@ -50,18 +50,23 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
 
 Images of 20 different models of cars.
 
-**Training** set: XXX images
+**Training** set: 791 images
 
-**Test set**: xxxx images 
-
-
-**Python Notebook**: [here](XXX)
+**Test set**: 784 images 
 
 **Python code**: [here](XXXX)
 
 **Goals:**
-* Implement a plain convolutional model
-* Implement a bilinear model 
+* Understand the following Keras implementations:
+** Name the layers
+** Built several models
+** Connect models with operations (outproduct)
+** Understand tensors sizes
+** Create an image generator that returns a list of tensors
+** Create adata flow with multiple inputs for the model
+** Understand the limitations of the proposed solution
+
+
   
 [Paper](https://pdfs.semanticscholar.org/3a30/7b7e2e742dd71b6d1ca7fde7454f9ebd2811.pdf)
 
