@@ -60,12 +60,17 @@ Images of 20 different models of cars.
 * Understand the following Keras implementations:
   * Name the layers
   * Built several models
-  * Connect models with operations (outproduct)
   * Understand tensors sizes
+  * Connect models with operations (outproduct)
   * Create an image generator that returns a list of tensors
-  * Create adata flow with multiple inputs for the model
+  * Create a data flow with multiple inputs for the model
   * Understand the limitations of the proposed solution
 
+* Lab Project (2 points of labs mark)
+  * Load a pre-trained VGG16 
+  * Connect this pre-trained model and form a bi-linear
+  * Try with freeze weights or not
+  * ...
 
   
 [Paper](https://pdfs.semanticscholar.org/3a30/7b7e2e742dd71b6d1ca7fde7454f9ebd2811.pdf)
