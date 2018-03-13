@@ -58,13 +58,13 @@ Images of 20 different models of cars.
 
 **Goals:**
 * Understand the following Keras implementations:
-** Name the layers
-** Built several models
-** Connect models with operations (outproduct)
-** Understand tensors sizes
-** Create an image generator that returns a list of tensors
-** Create adata flow with multiple inputs for the model
-** Understand the limitations of the proposed solution
+..* Name the layers
+..* Built several models
+..* Connect models with operations (outproduct)
+..* Understand tensors sizes
+..* Create an image generator that returns a list of tensors
+..* Create adata flow with multiple inputs for the model
+..* Understand the limitations of the proposed solution
 
 
   
