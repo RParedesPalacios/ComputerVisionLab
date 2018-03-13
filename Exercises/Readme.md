@@ -45,10 +45,9 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
 
 ## 3 Car Model identification with bi-linear models
 
-**UNDER CONSTRUCTION**
-
-
 Images of 20 different models of cars.
+
+![Cars](cars.png)
 
 **Training** set: 791 images
 
