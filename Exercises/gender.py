@@ -9,7 +9,7 @@ Original file is located at
 Install keras
 """
 
-!pip3 install keras
+#!pip3 install keras
 
 """Download data and uncompress"""
 
