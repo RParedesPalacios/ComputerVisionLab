@@ -13,7 +13,7 @@ Install keras
 
 """Download data and uncompress"""
 
-!wget https://www.dropbox.com/s/df836enoah2mgpu/gender.tgz
+!wget https://www.dropbox.com/s/hzwbtaubi1u11dy/gender.tgz
 !tar xvzf gender.tgz
 
 """Import packages"""
