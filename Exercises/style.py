@@ -38,13 +38,13 @@ style_array=np.expand_dims(style_array,axis=0)
 print(content_array.shape)
 print(style_array.shape)
 
-content_array[:, :, :, 0] -= np.mean(content_array, axis=0)
-content_array[:, :, :, 1] -= np.mean(content_array, axis=1)
-content_array[:, :, :, 2] -= np.mean(content_array, axis=2)
+content_array[:, :, :, 0] -= np.mean(content_array[:,:,:,0])
+content_array[:, :, :, 1] -= np.mean(content_array[:,:,:,1])
+content_array[:, :, :, 2] -= np.mean(content_array[:,:,:,2])
 
-style_array[:, :, :, 0] -= np.mean(style_array, axis=0)
-style_array[:, :, :, 1] -= np.mean(style_array, axis=1)
-style_array[:, :, :, 2] -= np.mean(style_array, axis=2)
+style_array[:, :, :, 0] -= np.mean(style_array[:, :, :, 0])
+style_array[:, :, :, 1] -= np.mean(style_array[:, :, :, 1])
+style_array[:, :, :, 2] -= np.mean(style_array[:, :, :, 2])
 
 height=512
 width=512
