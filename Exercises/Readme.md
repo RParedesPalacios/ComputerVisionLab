@@ -107,6 +107,41 @@ Code extracted and adapted from [github](https://github.com/emilwallner/Coloring
 
 Need help? [Read](https://blog.floydhub.com/colorizing-b&w-photos-with-neural-networks/)
 
+## 5 Style transfer
+
+![Transfer](transfer.png)
+
+Code extracted and adapted from [github](https://github.com/dsgiitr/Neural-Style-Transfer)
+
+Content image
+
+![UPV](upv.png)
+
+Style image
+
+![Wave](style.png)
+
+Result image
+
+![Result](resultstyle.png)
+
+**Python Notebook**: [here](style.ipynb)
+
+**Python code**: [here](style.py)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
