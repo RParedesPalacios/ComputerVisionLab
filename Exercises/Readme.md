@@ -104,7 +104,8 @@ Code extracted and adapted from [github](https://github.com/emilwallner/Coloring
 	* Use image functions to obtain lab space
 	* Create an appropiate  data augmentation 
 
-* Need help? [Read](https://blog.floydhub.com/colorizing-b&w-photos-with-neural-networks/)
+
+Need help? [Read](https://blog.floydhub.com/colorizing-b&w-photos-with-neural-networks/)
 
 
 
