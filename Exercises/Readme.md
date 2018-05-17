@@ -90,7 +90,7 @@ Code extracted and adapted from [github](https://github.com/emilwallner/Coloring
 
 **Goals:**
 
-* Use a more simple versions from: [alpha version](https://github.com/emilwallner/Coloring-greyscale-images-in-Keras/tree/master/floydhub/Alpha-version)
+* Use a more simple version from: [alpha version](https://github.com/emilwallner/Coloring-greyscale-images-in-Keras/tree/master/floydhub/Alpha-version)
 
 * Use the full version. Code adapted to download images for training and test:
 
