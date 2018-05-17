@@ -82,6 +82,34 @@ Images of 20 different models of cars.
 [Paper](https://pdfs.semanticscholar.org/3a30/7b7e2e742dd71b6d1ca7fde7454f9ebd2811.pdf)
 
 
+## 4 Image colorization
+
+![Cars](color.png)
+
+Code extracted and adapted from [github](https://github.com/emilwallner/Coloring-greyscale-images-in-Keras)
+
+**Goals:**
+
+* Use a more simple versions from: [alpha version](https://github.com/emilwallner/Coloring-greyscale-images-in-Keras/tree/master/floydhub/Alpha-version)
+
+* Use the full version. Code adapted to download images for training and test:
+
+	**Python Notebook**: [here](colorization.ipynb)
+
+	**Python code**: [here](colorization.py)
+
+* Understand the above Keras implementations:
+	* How to load the inception net 
+	* How to merge encoder and inception result
+	* Use image functions to obtain lab space
+	* Create an appropiate  data augmentation 
+
+* Need help? [Read](https://blog.floydhub.com/colorizing-b&w-photos-with-neural-networks/)
+
+
+
+
+
 
 
 
