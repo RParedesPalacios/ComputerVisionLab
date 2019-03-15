@@ -17,8 +17,7 @@ Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](h
 * Residual Nets
 * Wide Resnet 
 * Dense Nets
-
-...
+* ...
 
 ---
 
