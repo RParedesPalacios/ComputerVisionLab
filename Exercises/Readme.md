@@ -28,9 +28,9 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
 ![Face example](face.png)
 
 
-**Training** set: 10586 images
+**Training** set: 10585 images
 
-**Test** set: 2647 images 
+**Test** set: 2648 images 
 
 
 **Python Notebook**: [here](gender.ipynb)
