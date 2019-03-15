@@ -29,7 +29,7 @@ epochs = 150
 #### LOAD AND TRANSFORM
 
 ## Download: ONLY ONCE!
-!wget https://www.dropbox.com/s/kdhn10jwj99xkv7/data.tgz
+!wget https://www.dropbox.com/s/sakfqp6o8pbgasm/data.tgz
 !tar xvzf data.tgz
 #####
 
