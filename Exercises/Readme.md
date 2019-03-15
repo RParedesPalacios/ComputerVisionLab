@@ -10,14 +10,17 @@ Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](h
 * Implement different data augmentation
 * Implement VGG model A
 
-**Extra:**
-* Implement ResNets
-* Implement WideResNets
-* Implement DenseNets
+---
+
+## 1 Advanced topologies 
+
+* Residual Nets
+* Wide Resnet 
+* Dense Nets
 
 ---
 
-## 1 Gender Recognition
+## 2 Gender Recognition
 
 Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, poses and gestures. Faces are automatically detected and cropped to 100x100 pixels RGB.
 
@@ -40,13 +43,6 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
   
   get some inspiration from [Paper](https://pdfs.semanticscholar.org/d0eb/3fd1b1750242f3bb39ce9ac27fc8cc7c5af0.pdf)
     
----
-
-## 2 Advanced topologies 
-
-* Residual Nets
-* Wide Resnet 
-* Dense Nets
 
 ---
 
