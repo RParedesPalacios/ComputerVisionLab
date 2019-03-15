@@ -10,7 +10,7 @@ Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](h
 * Implement different data augmentation
 * Implement VGG model A
 
-** Extra: **
+**Extra:**
 * Implement ResNets
 * Implement WideResNets
 * Implement DenseNets
