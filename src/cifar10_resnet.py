@@ -1,37 +1,9 @@
-"""
-#Trains a ResNet on the CIFAR10 dataset.
+###################################################################################
+##
+## From https://github.com/keras-team/keras/blob/master/examples/cifar10_resnet.py
+##
+###################################################################################
 
-ResNet v1:
-[Deep Residual Learning for Image Recognition
-](https://arxiv.org/pdf/1512.03385.pdf)
-
-ResNet v2:
-[Identity Mappings in Deep Residual Networks
-](https://arxiv.org/pdf/1603.05027.pdf)
-
-
-Model|n|200-epoch accuracy|Original paper accuracy |sec/epoch GTX1080Ti
-:------------|--:|-------:|-----------------------:|---:
-ResNet20   v1|  3| 92.16 %|                 91.25 %|35
-ResNet32   v1|  5| 92.46 %|                 92.49 %|50
-ResNet44   v1|  7| 92.50 %|                 92.83 %|70
-ResNet56   v1|  9| 92.71 %|                 93.03 %|90
-ResNet110  v1| 18| 92.65 %|            93.39+-.16 %|165
-ResNet164  v1| 27|     - %|                 94.07 %|  -
-ResNet1001 v1|N/A|     - %|                 92.39 %|  -
-
-&nbsp;
-
-Model|n|200-epoch accuracy|Original paper accuracy |sec/epoch GTX1080Ti
-:------------|--:|-------:|-----------------------:|---:
-ResNet20   v2|  2|     - %|                     - %|---
-ResNet32   v2|N/A| NA    %|            NA         %| NA
-ResNet44   v2|N/A| NA    %|            NA         %| NA
-ResNet56   v2|  6| 93.01 %|            NA         %|100
-ResNet110  v2| 12| 93.15 %|            93.63      %|180
-ResNet164  v2| 18|     - %|            94.54      %|  -
-ResNet1001 v2|111|     - %|            95.08+-.14 %|  -
-"""
 
 from __future__ import print_function
 import keras
@@ -57,20 +29,6 @@ num_classes = 10
 # Subtracting pixel mean improves accuracy
 subtract_pixel_mean = True
 
-# Model parameter
-# ----------------------------------------------------------------------------
-#           |      | 200-epoch | Orig Paper| 200-epoch | Orig Paper| sec/epoch
-# Model     |  n   | ResNet v1 | ResNet v1 | ResNet v2 | ResNet v2 | GTX1080Ti
-#           |v1(v2)| %Accuracy | %Accuracy | %Accuracy | %Accuracy | v1 (v2)
-# ----------------------------------------------------------------------------
-# ResNet20  | 3 (2)| 92.16     | 91.25     | -----     | -----     | 35 (---)
-# ResNet32  | 5(NA)| 92.46     | 92.49     | NA        | NA        | 50 ( NA)
-# ResNet44  | 7(NA)| 92.50     | 92.83     | NA        | NA        | 70 ( NA)
-# ResNet56  | 9 (6)| 92.71     | 93.03     | 93.01     | NA        | 90 (100)
-# ResNet110 |18(12)| 92.65     | 93.39+-.16| 93.15     | 93.63     | 165(180)
-# ResNet164 |27(18)| -----     | 94.07     | -----     | 94.54     | ---(---)
-# ResNet1001| (111)| -----     | 92.39     | -----     | 95.08+-.14| ---(---)
-# ---------------------------------------------------------------------------
 n = 3
 
 # Model version
@@ -113,17 +71,7 @@ y_test = keras.utils.to_categorical(y_test, num_classes)
 
 
 def lr_schedule(epoch):
-    """Learning Rate Schedule
 
-    Learning rate is scheduled to be reduced after 80, 120, 160, 180 epochs.
-    Called automatically every epoch as part of callbacks during training.
-
-    # Arguments
-        epoch (int): The number of epochs
-
-    # Returns
-        lr (float32): learning rate
-    """
     lr = 1e-3
     if epoch > 180:
         lr *= 0.5e-3
@@ -144,21 +92,7 @@ def resnet_layer(inputs,
                  activation='relu',
                  batch_normalization=True,
                  conv_first=True):
-    """2D Convolution-Batch Normalization-Activation stack builder
 
-    # Arguments
-        inputs (tensor): input tensor from input image or previous layer
-        num_filters (int): Conv2D number of filters
-        kernel_size (int): Conv2D square kernel dimensions
-        strides (int): Conv2D square stride dimensions
-        activation (string): activation name
-        batch_normalization (bool): whether to include batch normalization
-        conv_first (bool): conv-bn-activation (True) or
-            bn-activation-conv (False)
-
-    # Returns
-        x (tensor): tensor as input to the next layer
-    """
     conv = Conv2D(num_filters,
                   kernel_size=kernel_size,
                   strides=strides,
@@ -183,33 +117,7 @@ def resnet_layer(inputs,
 
 
 def resnet_v1(input_shape, depth, num_classes=10):
-    """ResNet Version 1 Model builder [a]
 
-    Stacks of 2 x (3 x 3) Conv2D-BN-ReLU
-    Last ReLU is after the shortcut connection.
-    At the beginning of each stage, the feature map size is halved (downsampled)
-    by a convolutional layer with strides=2, while the number of filters is
-    doubled. Within each stage, the layers have the same number filters and the
-    same number of filters.
-    Features maps sizes:
-    stage 0: 32x32, 16
-    stage 1: 16x16, 32
-    stage 2:  8x8,  64
-    The Number of parameters is approx the same as Table 6 of [a]:
-    ResNet20 0.27M
-    ResNet32 0.46M
-    ResNet44 0.66M
-    ResNet56 0.85M
-    ResNet110 1.7M
-
-    # Arguments
-        input_shape (tensor): shape of input image tensor
-        depth (int): number of core convolutional layers
-        num_classes (int): number of classes (CIFAR10 has 10)
-
-    # Returns
-        model (Model): Keras model instance
-    """
     if (depth - 2) % 6 != 0:
         raise ValueError('depth should be 6n+2 (eg 20, 32, 44 in [a])')
     # Start model definition.
@@ -257,30 +165,7 @@ def resnet_v1(input_shape, depth, num_classes=10):
 
 
 def resnet_v2(input_shape, depth, num_classes=10):
-    """ResNet Version 2 Model builder [b]
 
-    Stacks of (1 x 1)-(3 x 3)-(1 x 1) BN-ReLU-Conv2D or also known as
-    bottleneck layer
-    First shortcut connection per layer is 1 x 1 Conv2D.
-    Second and onwards shortcut connection is identity.
-    At the beginning of each stage, the feature map size is halved (downsampled)
-    by a convolutional layer with strides=2, while the number of filter maps is
-    doubled. Within each stage, the layers have the same number filters and the
-    same filter map sizes.
-    Features maps sizes:
-    conv1  : 32x32,  16
-    stage 0: 32x32,  64
-    stage 1: 16x16, 128
-    stage 2:  8x8,  256
-
-    # Arguments
-        input_shape (tensor): shape of input image tensor
-        depth (int): number of core convolutional layers
-        num_classes (int): number of classes (CIFAR10 has 10)
-
-    # Returns
-        model (Model): Keras model instance
-    """
     if (depth - 2) % 9 != 0:
         raise ValueError('depth should be 9n+2 (eg 56 or 110 in [b])')
     # Start model definition.

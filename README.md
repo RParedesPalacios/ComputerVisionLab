@@ -1,5 +1,5 @@
 
-## 0 Basic implementations
+## Basic implementations (1 points)
 
 Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](https://github.com/RParedesPalacios/DeepLearningLab/tree/master/Examples/Keras/CIFAR)
 
@@ -13,17 +13,20 @@ Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](h
 
 ---
 
-## 1 Advanced topologies 
+## Advanced topologies (2 points)
 
 * Residual Nets [example of Keras](src/cifar10_resnet.py)
 
+* Residual Nets [example of Pytorch](src/resnet.py)
+
 * Wide Resnet 
+
 * Dense Nets
 
 
 ---
 
-## 2 Gender Recognition
+## Gender Recognition (1 point)
 
 Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, poses and gestures. Faces are automatically detected and cropped to 100x100 pixels RGB.
 
@@ -49,7 +52,7 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
 
 ---
 
-## 3 Car Model identification with bi-linear models
+## Car Model identification with bi-linear models (2 points)
 
 Images of 20 different models of cars.
 
@@ -86,7 +89,7 @@ Images of 20 different models of cars.
 [Paper](https://pdfs.semanticscholar.org/3a30/7b7e2e742dd71b6d1ca7fde7454f9ebd2811.pdf)
 
 
-## 4 Image colorization
+## Image colorization (1 point)
 
 ![Cars](images/color.png)
 
@@ -98,7 +101,9 @@ Code extracted and adapted from [github](https://github.com/emilwallner/Coloring
 
 * Use the full version. Code adapted to download images for training and test:
 
-	**Python Notebook**: [here](notebook/colorization.ipynb)	
+	**Python Notebook**: [here](notebook/colorization.ipynb)
+	
+		
 	**Python code**: [here](src/colorization.py)
 
 * Understand the above Keras implementations:
@@ -108,9 +113,9 @@ Code extracted and adapted from [github](https://github.com/emilwallner/Coloring
 	* Create an appropiate  data augmentation 
 
 
-Need help? [Read](https://blog.floydhub.com/colorizing-b&w-photos-with-neural-networks/)
+Need help? [Read](https://blog.floydhub.com/colorizing-b-w-photos-with-neural-networks/)
 
-## 5 Style transfer
+## Style transfer (1 point)
 
 ![Transfer](images/transfer.png)
 
@@ -131,6 +136,11 @@ Result image
 **Python Notebook**: [here](notebook/style.ipynb)
 
 **Python code**: [here](src/style.py)
+
+
+## Other project? 
+
+You are welcome!
 
 
 
