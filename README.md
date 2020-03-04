@@ -1,7 +1,7 @@
 
 ## 0 Basic implementations
 
-Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](https://github.com/RParedesPalacios/DeepLearningLab/tree/master/Examples/CIFAR)
+Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](https://github.com/RParedesPalacios/DeepLearningLab/tree/master/Examples/Keras/CIFAR)
 
 ![Cifar10](images/cifar10.png)
 
@@ -36,7 +36,7 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
 **Test** set: 2648 images 
 
 
-**Python Notebook**: [here](src/gender.ipynb)
+**Python Notebook**: [here](notebook/gender.ipynb)
 
 **Python code**: [here](src/gender.py)
 
