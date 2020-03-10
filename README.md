@@ -1,4 +1,4 @@
-# Computer Vision Lab (up to 5 points).
+# Computer Vision Lab (up to 5 points)
 
 ## Basic implementations (1 points)
 
@@ -10,7 +10,7 @@ Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](h
 
 * Implement some basic convolutional networks
 * Implement different data augmentation
-* Implement VGG model A
+* Implement VGG model
 
 ---
 
