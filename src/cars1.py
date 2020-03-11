@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from __future__ import print_function
 import keras
 from keras.datasets import cifar10
@@ -16,7 +14,10 @@ import matplotlib.pyplot as plt
 
 from keras.callbacks import LearningRateScheduler as LRS
 from keras.preprocessing.image import ImageDataGenerator
+from keras.utils import plot_model
 
+
+import os
 
 batch_size = 32
 num_classes = 20
@@ -27,12 +28,12 @@ epochs = 150
 #### LOAD AND TRANSFORM
 
 ## Download: ONLY ONCE!
-!wget https://www.dropbox.com/s/sakfqp6o8pbgasm/data.tgz
-!tar xvzf data.tgz
+#os.system('wget https://www.dropbox.com/s/sakfqp6o8pbgasm/data.tgz')
+#os.system('tar xvzf data.tgz')
 #####
 
 
-# Load 
+# Load
 x_train = np.load('x_train.npy')
 x_test = np.load('x_test.npy')
 
@@ -74,7 +75,7 @@ y_test = keras.utils.to_categorical(y_test, num_classes)
 ###########################################################
 
 
-## DEF A BLOCK CONV + BN + GN + CONV + BN + GN + MAXPOOL 
+## DEF A BLOCK CONV + BN + GN + CONV + BN + GN + MAXPOOL
 def CBGN(model,filters,lname,ishape=0):
   if (ishape!=0):
     model.add(Conv2D(filters, (3, 3), padding='same',
@@ -82,7 +83,7 @@ def CBGN(model,filters,lname,ishape=0):
   else:
     model.add(Conv2D(filters, (3, 3), padding='same'))
 
-    
+
   model.add(BN())
   model.add(GN(0.3))
   model.add(Activation('relu'))
@@ -92,7 +93,7 @@ def CBGN(model,filters,lname,ishape=0):
   model.add(GN(0.3))
   model.add(Activation('relu'))
   model.add(MaxPooling2D(pool_size=(2, 2),name=lname))
-  
+
   return model
 
 ############################################################
@@ -114,7 +115,7 @@ model2.add(Dropout(0.5,name='m2'))
 
 
 def outer_product(x):
-  phi_I = tf.einsum('ijkm,ijkn->imn',x[0],x[1])		# Einstein Notation  [batch,1,1,depth] x [batch,1,1,depth] -> [batch,depth,depth]
+  phi_I = tf.einsum('ijkm,ijkn->imn',x[0],x[1])		# Einstein Notation  [batch,31,31,depth] x [batch,31,31,depth] -> [batch,depth,depth]
   phi_I = tf.reshape(phi_I,[-1,128*128])	        # Reshape from [batch_size,depth,depth] to [batch_size, depth*depth]
   phi_I = tf.divide(phi_I,31*31)								  # Divide by feature map size [sizexsize]
 
@@ -124,15 +125,23 @@ def outer_product(x):
 
 
 
-conv1=model1.get_layer('m1').output 
-conv2=model2.get_layer('m2').output 
+conv1=model1.get_layer('m1').output
+conv2=model2.get_layer('m2').output
 
 x = Lambda(outer_product, name='outer_product')([conv1,conv2])
 
 predictions=Dense(num_classes, activation='softmax', name='predictions')(x)
 
 model = Model(inputs=[model1.input,model2.input], outputs=predictions)
-  
+
+## OPTIM AND COMPILE
+opt = SGD(lr=0.1, decay=1e-6)
+
+model.compile(loss='categorical_crossentropy',
+              optimizer=opt,
+              metrics=['accuracy'])
+
+
 model.summary()
 
 
@@ -156,14 +165,27 @@ def multiple_data_generator(generator, X,Y,bs):
       [Xi,Yi] = genX.next()
       yield [Xi,Xi],Yi
 
+
+# DEFINE A LEARNING RATE SCHEDULER
+def scheduler(epoch):
+    if epoch < 25:
+        return .1
+    elif epoch < 50:
+        return 0.01
+    else:
+        return 0.001
+
+set_lr = LRS(scheduler)
+
 ##############################################
 
+plot_model(model, to_file='model.png')
 
 ## TRAINING with DA and LRA
 history=model.fit_generator(multiple_data_generator(datagen,x_train, y_train,batch_size),
-                            steps_per_epoch=len(x_train) / batch_size, 
+                            steps_per_epoch=len(x_train) / batch_size,
                             epochs=epochs,
                             callbacks=[set_lr],
                             verbose=1)
 
-## check how to feed test data for validation 
+## check how to feed test data for validation
