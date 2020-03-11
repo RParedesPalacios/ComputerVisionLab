@@ -1,6 +1,6 @@
 # Computer Vision Lab (up to 5 points)
 
-## Basic implementations (1 points)
+## Basic implementations (1 point)
 
 Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](https://github.com/RParedesPalacios/DeepLearningLab/tree/master/Examples/Keras/CIFAR)
 
