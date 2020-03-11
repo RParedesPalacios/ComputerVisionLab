@@ -1,14 +1,7 @@
-
-"""Download data and uncompress"""
-
-!wget https://www.dropbox.com/s/zcwlujrtz3izcw8/gender.tgz
-!tar xvzf gender.tgz
-
-"""Import packages"""
+from __future__ import print_function
 
 import numpy as np
 import matplotlib.pyplot as plt
-from __future__ import print_function
 import keras
 from keras.datasets import cifar10
 from keras.models import Sequential
@@ -20,10 +13,15 @@ from keras.optimizers import SGD
 
 from keras.callbacks import LearningRateScheduler as LRS
 from keras.preprocessing.image import ImageDataGenerator
+import os
 
-"""Load and prepare data"""
 
-# Load 
+os.system('wget https://www.dropbox.com/s/zcwlujrtz3izcw8/gender.tgz')
+os.system('tar xvzf gender.tgz')
+
+
+
+# Load
 x_train = np.load('x_train.npy')
 x_test = np.load('x_test.npy')
 
@@ -67,5 +65,3 @@ num_classes = 2
 
 y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
-
-"""Create model, data augmentation etc..."""
