@@ -14,6 +14,7 @@ from keras.models import Model
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 from keras.callbacks import LearningRateScheduler as LRS
 from keras.preprocessing.image import ImageDataGenerator
@@ -29,8 +30,8 @@ epochs = 150
 #### LOAD AND TRANSFORM
 
 ## Download: ONLY ONCE!
-!wget https://www.dropbox.com/s/sakfqp6o8pbgasm/data.tgz
-!tar xvzf data.tgz
+os.system('wget https://www.dropbox.com/s/sakfqp6o8pbgasm/data.tgz')
+os.system('tar xvzf data.tgz')
 #####
 
 
@@ -159,7 +160,7 @@ history=model1.fit_generator(datagen.flow(x_train, y_train,batch_size=batch_size
 #############################
 
 def outer_product(x):
-  phi_I = tf.einsum('ijkm,ijkn->imn',x[0],x[1])		# Einstein Notation  [batch,1,1,depth] x [batch,1,1,depth] -> [batch,depth,depth]
+  phi_I = tf.einsum('ijkm,ijkn->imn',x[0],x[1])		# Einstein Notation  [batch,31,31,depth] x [batch,31,31,depth] -> [batch,depth,depth]
   phi_I = tf.reshape(phi_I,[-1,128*128])	        # Reshape from [batch_size,depth,depth] to [batch_size, depth*depth]
   phi_I = tf.divide(phi_I,31*31)								  # Divide by feature map size [sizexsize]
 
