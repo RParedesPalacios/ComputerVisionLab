@@ -23,7 +23,7 @@ Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](h
 
 ---
 
-## Gender Recognition (4 point)
+## Gender Recognition (3 point)
 
 Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, poses and gestures. Faces are automatically detected and cropped to 100x100 pixels RGB.
 
@@ -49,7 +49,7 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
 
 ---
 
-## Car Model identification with bi-linear models (4 points)
+## Car Model identification with bi-linear models (5 points)
 
 Images of 20 different models of cars.
 
@@ -77,14 +77,15 @@ Images of 20 different models of cars.
   * Create a data flow with multiple inputs for the model
   * Understand the limitations of the proposed solution
 
-* **Lab Project (2 points of labs mark)**
-  * Load a pre-trained VGG16 
+* **Suggestion:
+  * Load a pre-trained VGG16, Resnet... model 
   * Connect this pre-trained model and form a bi-linear
-  * Train freezing weights or not
-  * ...
+  * Train freezing weights first, unfreeze after some epochs
+  
   
 [Paper](https://pdfs.semanticscholar.org/3a30/7b7e2e742dd71b6d1ca7fde7454f9ebd2811.pdf)
 
+--------------------------------
 
 ## Image colorization (2 point)
 
@@ -94,7 +95,7 @@ Code extracted and adapted from [github](https://github.com/emilwallner/Coloring
 
 **Goals:**
 
-* Use a more simple version from: [alpha version](https://github.com/emilwallner/Coloring-greyscale-images-in-Keras/tree/master/floydhub/Alpha-version)
+* Use a simpler version from: [alpha version](https://github.com/emilwallner/Coloring-greyscale-images-in-Keras/tree/master/floydhub/Alpha-version)
 
 * Use the full version. Code adapted to download images for training and test:
 
