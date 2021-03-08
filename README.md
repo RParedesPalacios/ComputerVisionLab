@@ -75,7 +75,6 @@ Images of 20 different models of cars.
   * Connect models with operations (outproduct)
   * Create an image generator that returns a list of tensors
   * Create a data flow with multiple inputs for the model
-  * Understand the limitations of the proposed solution
 
 **Suggestion:**
   * Load a pre-trained VGG16, Resnet... model 
