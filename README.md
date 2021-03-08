@@ -1,6 +1,6 @@
 # Computer Vision Lab (up to 5 points)
 
-## Basic implementations (1 point)
+## Basic implementations
 
 Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](https://github.com/RParedesPalacios/DeepLearningLab/tree/master/Examples/Keras/CIFAR)
 
@@ -14,7 +14,7 @@ Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](h
 
 ---
 
-## Advanced topologies (2 points)
+## Advanced topologies (1 point)
 
 * Residual Nets [example of Keras](src/cifar10_resnet.py)
 
@@ -27,7 +27,7 @@ Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](h
 
 ---
 
-## Gender Recognition (1 point)
+## Gender Recognition (2 point)
 
 Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, poses and gestures. Faces are automatically detected and cropped to 100x100 pixels RGB.
 
@@ -53,7 +53,7 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
 
 ---
 
-## Car Model identification with bi-linear models (2 points)
+## Car Model identification with bi-linear models (4 points)
 
 Images of 20 different models of cars.
 
@@ -90,7 +90,7 @@ Images of 20 different models of cars.
 [Paper](https://pdfs.semanticscholar.org/3a30/7b7e2e742dd71b6d1ca7fde7454f9ebd2811.pdf)
 
 
-## Image colorization (1 point)
+## Image colorization (2 point)
 
 ![Cars](images/color.png)
 
@@ -116,7 +116,7 @@ Code extracted and adapted from [github](https://github.com/emilwallner/Coloring
 
 Need help? [Read](https://blog.floydhub.com/colorizing-b-w-photos-with-neural-networks/)
 
-## Style transfer (1 point)
+## Style transfer (2 point)
 
 ![Transfer](images/transfer.png)
 
