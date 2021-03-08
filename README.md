@@ -77,7 +77,7 @@ Images of 20 different models of cars.
   * Create a data flow with multiple inputs for the model
   * Understand the limitations of the proposed solution
 
-* **Suggestion:
+**Suggestion:**
   * Load a pre-trained VGG16, Resnet... model 
   * Connect this pre-trained model and form a bi-linear
   * Train freezing weights first, unfreeze after some epochs
