@@ -1,4 +1,4 @@
-# Computer Vision Lab (up to 5 points)
+# Computer Vision Lab (up to 10 points)
 
 ## Basic implementations
 
