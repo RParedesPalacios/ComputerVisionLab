@@ -79,7 +79,8 @@ Images of 20 different models of cars.
 **Suggestion:**
   * Load a pre-trained VGG16, Resnet... model 
   * Connect this pre-trained model and form a bi-linear
-  * Train freezing weights first, unfreeze after some epochs
+  * Train freezing weights first, unfreeze after some epochs, very low learning rate
+  * Accuracy >65% is expected 
   
   
 [Paper](https://pdfs.semanticscholar.org/3a30/7b7e2e742dd71b6d1ca7fde7454f9ebd2811.pdf)
