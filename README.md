@@ -14,20 +14,16 @@ Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](h
 
 ---
 
-## Advanced topologies (1 point)
+## Advanced topologies 
 
-* Residual Nets [example of Keras](src/cifar10_resnet.py)
+* Wide Resnet  (1 point) 
 
-* Residual Nets [example of Pytorch](src/resnet.py)
-
-* Wide Resnet 
-
-* Dense Nets
+* Dense Nets   (1 point)
 
 
 ---
 
-## Gender Recognition (2 point)
+## Gender Recognition (4 point)
 
 Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, poses and gestures. Faces are automatically detected and cropped to 100x100 pixels RGB.
 
@@ -45,8 +41,8 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
 **Python code**: [here](src/gender.py)
 
 **Goals:**
-* Implement a model with >95% accuracy over test set
-* Implement a model with >90% accuracy with less than 100K parameters
+* Implement a model with >97% accuracy over test set
+* Implement a model with >92% accuracy with less than 100K parameters
   
   get some inspiration from [Paper](https://pdfs.semanticscholar.org/d0eb/3fd1b1750242f3bb39ce9ac27fc8cc7c5af0.pdf)
     
