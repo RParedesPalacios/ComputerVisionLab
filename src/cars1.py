@@ -120,7 +120,7 @@ def outer_product(x):
   phi_I = tf.divide(phi_I,31*31)								  # Divide by feature map size [sizexsize]
 
   y_ssqrt = tf.multiply(tf.sign(phi_I),tf.sqrt(tf.abs(phi_I)+1e-12))		# Take signed square root of phi_I
-  z_l2 = tf.nn.l2_normalize(y_ssqrt, dim=1)								              # Apply l2 normalization
+  z_l2 = tf.nn.l2_normalize(y_ssqrt)								              # Apply l2 normalization
   return z_l2
 
 
