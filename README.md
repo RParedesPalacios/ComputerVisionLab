@@ -95,22 +95,17 @@ Code extracted and adapted from [github](https://github.com/emilwallner/Coloring
 
 **Goals:**
 
-
-* Use the full version. Code adapted to download images for training and test:
-
-	**Python Notebook**: [here](notebook/colorization.ipynb)
-	
-		
-	**Python code**: [here](src/colorization.py)
-
 * Understand the above Keras implementations:
-	* How to load the inception net 
-	* How to merge encoder and inception result
-	* Use image functions to obtain lab space
-	* Create an appropiate  data augmentation 
+  * How to load the inception net 
+  * How to merge encoder and inception result
+  * Use image functions to obtain lab space
+  * Create an appropiate  data augmentation 
+
+**Python code**: [here](src/colorization.py)
 
 
 Need help? [Read](https://blog.floydhub.com/colorizing-b-w-photos-with-neural-networks/)
+
 
 ## Style transfer (2 point)
 
