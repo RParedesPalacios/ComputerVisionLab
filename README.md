@@ -98,8 +98,7 @@ Code extracted and adapted from [github](https://github.com/emilwallner/Coloring
 * Understand the above Keras implementations:
   * How to load the inception net 
   * How to merge encoder and inception result
-  * Use image functions to obtain lab space
-  * Create an appropiate  data augmentation 
+
 
 **Python code**: [here](src/colorization.py)
 
