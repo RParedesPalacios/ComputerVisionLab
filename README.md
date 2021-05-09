@@ -124,8 +124,6 @@ Result image
 
 ![Result](images/resultstyle.png)
 
-**Python Notebook**: [here](notebook/style.ipynb)
-
 **Python code**: [here](src/style.py)
 
 
