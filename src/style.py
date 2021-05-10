@@ -98,11 +98,6 @@ for layer_name in feature_layers:
     sl=style_loss(style_features,combination_features)
     loss=(style_weight/len(feature_layers))*sl
 
-def total_variation_loss(x):
-    a=backend.square(x[:,:height-1,:width-1,:]-x[:,1:,:width-1,:])
-    b = backend.square(x[:, :height-1, :width-1, :] - x[:, :height-1, 1:, :])
-    return backend.sum(backend.pow(a + b, 1.25))
-loss += total_variation_weight * total_variation_loss(combination_image)
 
 grads = backend.gradients(loss, combination_image)
 
