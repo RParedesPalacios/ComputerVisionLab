@@ -17,16 +17,12 @@ from keras.applications.vgg16 import preprocess_input,decode_predictions
 from keras import backend
 from keras.models import Model
 from scipy.optimize import fmin_l_bfgs_b
-from scipy.misc import imsave
 
-!rm *.tgz *.png 
-!wget https://www.dropbox.com/s/pppk3ltnci0damv/style.tgz
-!tar xvzf style.tgz
 
-content_image=Image.open('upv.png')
+content_image=Image.open('../images/upv.png')
 content_image=content_image.resize((512,512))
 
-style_image= Image.open('style.png')
+style_image= Image.open('../images/style.png')
 style_image=style_image.resize((512,512))
 
 content_array=np.asarray(content_image,dtype='float32')
@@ -52,14 +48,15 @@ content_image=backend.variable(content_array)
 style_image=backend.variable(style_array)
 combination_image=backend.placeholder((1,height,width,3))
 
+
 input_tensor=backend.concatenate([content_image,style_image,combination_image],axis=0)
 
 model=VGG16(input_tensor=input_tensor,weights='imagenet', include_top=False)
 model.summary()
 
-content_weight = 0.05
-style_weight = 50.0
-total_variation_weight = 1.0
+content_weight=backend.variable(0.05)
+style_weight = backend.variable(50.0)
+total_variation_weight = backend.variable(1.0)
 
 layers=dict([(layer.name, layer.output) for layer in model.layers])
 print(layers)
@@ -71,9 +68,11 @@ def content_loss(content, combination):
 
 layer_features=layers['block2_conv2']
 print(layer_features.shape)
+
 content_image_features=layer_features[0,:,:,:]
 combination_features=layer_features[2,:,:,:]
-loss+=content_weight*content_loss(content_image_features,combination_features)
+#loss.assign_add(content_weight*content_loss(content_image_features,combination_features))
+
 
 def gram_matrix(x):
     features=backend.batch_flatten(backend.permute_dimensions(x,(2,0,1)))
@@ -97,7 +96,7 @@ for layer_name in feature_layers:
     style_features=layer_features[1,:,:,:]
     combination_features=layer_features[2,:,:,:]
     sl=style_loss(style_features,combination_features)
-    loss+=(style_weight/len(feature_layers))*sl
+    loss=(style_weight/len(feature_layers))*sl
 
 def total_variation_loss(x):
     a=backend.square(x[:,:height-1,:width-1,:]-x[:,1:,:width-1,:])
