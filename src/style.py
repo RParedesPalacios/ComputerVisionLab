@@ -96,7 +96,7 @@ for layer_name in feature_layers:
     style_features=layer_features[1,:,:,:]
     combination_features=layer_features[2,:,:,:]
     sl=style_loss(style_features,combination_features)
-    loss=(style_weight/len(feature_layers))*sl
+    loss+=(style_weight/len(feature_layers))*sl
 
 
 grads = backend.gradients(loss, combination_image)
