@@ -71,7 +71,7 @@ print(layer_features.shape)
 
 content_image_features=layer_features[0,:,:,:]
 combination_features=layer_features[2,:,:,:]
-#loss.assign_add(content_weight*content_loss(content_image_features,combination_features))
+loss+=content_weight*content_loss(content_image_features,combination_features)
 
 
 def gram_matrix(x):
@@ -101,62 +101,7 @@ for layer_name in feature_layers:
 
 grads = backend.gradients(loss, combination_image)
 
-outputs=[loss]
-if isinstance(grads, (list, tuple)):
-    outputs += grads
-else:
-    outputs.append(grads)
-f_outputs = backend.function([combination_image], outputs)
-
-def eval_loss_and_grads(x):
-    x = x.reshape((1, height, width, 3))
-    outs = f_outputs([x])
-    loss_value = outs[0]
-    grad_values = outs[1].flatten().astype('float64')
-    return loss_value, grad_values
-
-class Evaluator(object):
-    def __init__(self):
-        self.loss_value=None
-        self.grads_values=None
-    
-    def loss(self, x):
-        assert self.loss_value is None
-        loss_value, grad_values = eval_loss_and_grads(x)
-        self.loss_value = loss_value
-        self.grad_values = grad_values
-        return self.loss_value
-
-    def grads(self, x):
-        assert self.loss_value is not None
-        grad_values = np.copy(self.grad_values)
-        self.loss_value = None
-        self.grad_values = None
-        return grad_values
-
-evaluator=Evaluator()
-
-x=np.random.uniform(0,255,(1,height,width,3))-128.0
-
-iterations = 10
-
-import time
-for i in range(iterations):
-    print('Start of iteration', i)
-    start_time = time.time()
-    x, min_val, info = fmin_l_bfgs_b(evaluator.loss, x.flatten(),
-                           fprime=evaluator.grads, maxfun=20)
-    print(min_val)
-    end_time = time.time()
-    print('Iteration %d completed in %ds' % (i, end_time - start_time))
-
-print
-x = x.reshape((height, width, 3))
-x = x[:, :, ::-1]
-x[:, :, 0] += 103.939
-x[:, :, 1] += 116.779
-x[:, :, 2] += 123.68
-x = np.clip(x, 0, 255).astype('uint8')
-
-Image.fromarray(x)
+"""
+...
+"""
 
