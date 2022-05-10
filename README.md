@@ -106,6 +106,20 @@ Code extracted and adapted from [github](https://github.com/emilwallner/Coloring
 Need help? [Read](https://blog.floydhub.com/colorizing-b-w-photos-with-neural-networks/)
 
 
+## Image segmentation (4 points)
+
+Retina image segmentation
+
+![Image](images/retina.png)
+![Mask](images/mask.png)
+
+An example of encoder-decoder for segmentation:
+
+**Python code**: [here](src/segmen.py)
+
+Exercise: implement a UNET.
+
+
 ## Other project? 
 
 You are welcome!
