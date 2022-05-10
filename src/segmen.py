@@ -8,6 +8,10 @@ from tensorflow.keras.optimizers import Adam
 from keras.models import Model
 
 
+!wget https://www.dropbox.com/s/qii26wuxcbxw169/images.npy
+!wget https://www.dropbox.com/s/gstpamhin8rlhlg/masks.npy
+
+
 images=np.load("images.npy")
 print(images.shape)
 ## Crop 512
