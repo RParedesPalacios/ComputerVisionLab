@@ -41,8 +41,8 @@ Images from "Labeled Faces in the Wild" dataset (LFW) in realistic scenarios, po
 **Python code**: [here](src/gender.py)
 
 **Goals:**
-* Implement a model with >97% accuracy over test set
-* Implement a model with >92% accuracy with less than 100K parameters
+* Implement a model with >98% accuracy over test set
+* Implement a model with >95% accuracy with less than 100K parameters
   
   get some inspiration from [Paper](https://pdfs.semanticscholar.org/d0eb/3fd1b1750242f3bb39ce9ac27fc8cc7c5af0.pdf)
     
