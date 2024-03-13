@@ -2,7 +2,7 @@
 
 ## Basic implementations
 
-Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](https://github.com/RParedesPalacios/DeepLearningLab/tree/master/Examples/Keras/CIFAR)
+Check basic implementations on CIFAR10 in the Deep Learning Lab project [here](https://github.com/RParedesPalacios/DeepLearningLab/tree/master/CIFAR/Keras)
 
 ![Cifar10](images/cifar10.png)
 
