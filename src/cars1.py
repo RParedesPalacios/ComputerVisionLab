@@ -4,7 +4,7 @@ from keras.datasets import cifar10
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten, Lambda
 from keras.layers import Conv2D, MaxPooling2D
-from keras.layers.normalization import BatchNormalization as BN
+from keras.layers import BatchNormalization as BN
 from keras.layers import GaussianNoise as GN
 from keras.optimizers import SGD
 from keras.models import Model
@@ -135,7 +135,7 @@ predictions=Dense(num_classes, activation='softmax', name='predictions')(x)
 model = Model(inputs=[model1.input,model2.input], outputs=predictions)
 
 ## OPTIM AND COMPILE
-opt = SGD(lr=0.1, decay=1e-6)
+opt = SGD(lr=0.1)
 
 model.compile(loss='categorical_crossentropy',
               optimizer=opt,
