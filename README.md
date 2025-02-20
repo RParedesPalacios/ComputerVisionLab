@@ -109,11 +109,35 @@ Students should choose between one of these datasets:
     * Size: ~16000 images, 196 calses
     * Difficulty: requires attention to details, making a good test to compare vit and CNNs
     * Dataset Link: [Available in torchvision](https://pytorch.org/vision/main/generated/torchvision.datasets.StanfordCars.html) (see instructions for download there)
-**Goals**:
+      
+**Results**:
   * Check literature to know expected accuracy
   * Organize results clearly, effect of learning rate, batch size, scheduing, freezing of layers....
   * Having competitive classification results will be a plus
   * It will be also a plus if different transformer architectures are compared (for instance comparison of ViT models size)
+
+--------------------------------
+## Visualizing attention maps in vision transformers (3 puntos)
+
+**Global objective**: 
+
+Implement a visualization pipeline to display attention maps from different layers of a ViT
+
+**Task description**:
+  * Use a pretrained ViT either from timm or Huggingface
+  * Get some pictures compatible with any imagenet class (car, dog, cat...)
+  * Write code to extract attention maps from the ViT model
+  * Pass images through the model and extract attention weights
+  * Write code to display attention maps overlayed on the imput image to see important regions for the ViT.
+  * Compare and analyze attention maps of different layers and different images.
+
+**Notes**:
+  * The specific code for extracting attention maps may change depending on the specific implementation of the model
+  * You can try and discuss different visualization techniques to better understand the attention patterns. For instance, visualize attention maps of each head or fusing attention from several heads of the same layer.
+
+**Extras**:
+  * Implement attention rollout and compare with atention of individual layers
+  * Compare attention maps with activation maps (gradcam) of a pretrained CNN
 
 
 ---------------------------------
