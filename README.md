@@ -86,6 +86,37 @@ Images of 20 different models of cars.
 [Paper](https://pdfs.semanticscholar.org/3a30/7b7e2e742dd71b6d1ca7fde7454f9ebd2811.pdf)
 
 --------------------------------
+## Image classification with transformers vs. CNN (5 puntos)
+
+**Global objective**: Compare classification performance of finetuned vision transformers vs CNN
+
+**Task descritpion**: 
+  * Download and setup one of the proposed datasets
+  * Finetune a simple CNN  (ResNet, EfficientNet, or MobileNet) for baseline comparison (free choice of CNN)
+  * Finetune a Vision transformer (ViT, Swin, Maxvit) of free choice using timm or huggingface. Please select a model that fits your computational capabilities
+  * Compare: accuracy, training speed, inference time. 
+
+**Datasets**:
+Students should choose between one of these datasets:
+
+  * flowers-102 (Oxford 102 Category Flowers)
+    * Fine-grained classification with 102 flower species ssmall enough to train within a reasonable time.
+    * Size: 8,189 images, 102 classes.
+    * Difficulty: Small inter-class variability, small dataset (risk of overfitting).
+    * Dataset Link: [Flowers-102](https://www.robots.ox.ac.uk/~vgg/data/flowers/102)
+  * Stanford Cars
+    * Middle size dataset with high inter-class similarity
+    * Size: ~16000 images, 196 calses
+    * Difficulty: requires attention to details, making a good test to compare vit and CNNs
+    * Dataset Link: [Available in torchvision](https://pytorch.org/vision/main/generated/torchvision.datasets.StanfordCars.html) (see instructions for download there)
+**Goals**:
+  * Check literature to know expected accuracy
+  * Organize results clearly, effect of learning rate, batch size, scheduing, freezing of layers....
+  * Having competitive classification results will be a plus
+  * It will be also a plus if different transformer architectures are compared (for instance comparison of ViT models size)
+
+
+---------------------------------
 
 ## Image colorization (3 point)
 
