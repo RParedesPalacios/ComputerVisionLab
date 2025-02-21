@@ -86,6 +86,61 @@ Images of 20 different models of cars.
 [Paper](https://pdfs.semanticscholar.org/3a30/7b7e2e742dd71b6d1ca7fde7454f9ebd2811.pdf)
 
 --------------------------------
+## Image classification with transformers vs. CNN (5 puntos)
+
+**Global objective**: Compare classification performance of finetuned vision transformers vs CNN
+
+**Task descritpion**: 
+  * Download and setup one of the proposed datasets
+  * Finetune a simple CNN  (ResNet, EfficientNet, or MobileNet) for baseline comparison (free choice of CNN)
+  * Finetune a Vision transformer (ViT, Swin, Maxvit) of free choice using timm or huggingface. Please select a model that fits your computational capabilities
+  * Compare: accuracy, training speed, inference time. 
+
+**Datasets**:
+Students should choose between one of these datasets:
+
+  * flowers-102 (Oxford 102 Category Flowers)
+    * Fine-grained classification with 102 flower species ssmall enough to train within a reasonable time.
+    * Size: 8,189 images, 102 classes.
+    * Difficulty: Small inter-class variability, small dataset (risk of overfitting).
+    * Dataset Link: [Flowers-102](https://www.robots.ox.ac.uk/~vgg/data/flowers/102)
+  * Stanford Cars
+    * Middle size dataset with high inter-class similarity
+    * Size: ~16000 images, 196 calses
+    * Difficulty: requires attention to details, making a good test to compare vit and CNNs
+    * Dataset Link: [Available in torchvision](https://pytorch.org/vision/main/generated/torchvision.datasets.StanfordCars.html) (see instructions for download there)
+      
+**Results**:
+  * Check literature to know expected accuracy
+  * Organize results clearly, effect of learning rate, batch size, scheduing, freezing of layers....
+  * Having competitive classification results will be a plus
+  * It will be also a plus if different transformer architectures are compared (for instance comparison of ViT models size)
+
+--------------------------------
+## Visualizing attention maps in vision transformers (3 puntos)
+
+**Global objective**: 
+
+Implement a visualization pipeline to display attention maps from different layers of a ViT
+
+**Task description**:
+  * Use a pretrained ViT either from timm or Huggingface
+  * Get some pictures compatible with any imagenet class (car, dog, cat...)
+  * Write code to extract attention maps from the ViT model
+  * Pass images through the model and extract attention weights
+  * Write code to display attention maps overlayed on the imput image to see important regions for the ViT.
+  * Compare and analyze attention maps of different layers and different images.
+
+**Notes**:
+  * The specific code for extracting attention maps may change depending on the specific implementation of the model
+  * You can try and discuss different visualization techniques to better understand the attention patterns. For instance, visualize attention maps of each head or fusing attention from several heads of the same layer.
+
+**Extras**:
+  * Implement attention rollout and compare with atention of individual layers
+  * Compare attention maps with activation maps (gradcam) of a pretrained CNN
+
+
+---------------------------------
 
 ## Image colorization (3 point)
 
