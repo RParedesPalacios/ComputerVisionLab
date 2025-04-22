@@ -168,8 +168,15 @@ ISIC Melanoma Segmentation
 ![Image](images/ISIC_0000000.jpg)
 ![Mask](images/ISIC_0000000_segmentation.png)
 
+Dataset available here:
 
-Exercise: implement a UNET for this task.
+[ISIC_Melanoma](https://www.dropbox.com/scl/fi/8v8isahqorzdq3h7rjv98/isic_segmentation.zip?rlkey=2ua7dv4ueioj68mn6466x46zq&st=anjrmz9j&dl=0)
+
+Exercise: 
+
+* Implement a UNET for this task.
+* Split data 80% training 20% test
+* Get results over test set 
 
 
 ## Other project? 
