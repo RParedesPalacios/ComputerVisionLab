@@ -165,8 +165,8 @@ Need help? [Read](https://blog.floydhub.com/colorizing-b-w-photos-with-neural-ne
 
 ISIC Melanoma Segmentation
 
-![Image](images/retina.png)
-![Mask](images/mask.png)
+![Image](images/ISIC_0000000.jpg)
+![Mask](images/ISIC_0000000_segmentation.png)
 
 
 Exercise: implement a UNET for this task.
