@@ -163,16 +163,13 @@ Need help? [Read](https://blog.floydhub.com/colorizing-b-w-photos-with-neural-ne
 
 ## Image segmentation (4 points)
 
-Retina image segmentation
+ISIC Melanoma Segmentation
 
 ![Image](images/retina.png)
 ![Mask](images/mask.png)
 
-An example of encoder-decoder for segmentation:
 
-**Python code**: [here](src/segmen.py)
-
-Exercise: implement a UNET.
+Exercise: implement a UNET for this task.
 
 
 ## Other project? 
